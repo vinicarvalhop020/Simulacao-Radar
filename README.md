@@ -30,16 +30,10 @@ R = (1/2) * c * T_d
 s(t) = e^(jπWt²/T), -T/2 ≤ t ≤ T/2
 
 
-![Sinal Chirp](https://i.imgur.com/eBwZ85x.png)  
-*Figuras 1 e 2 do artigo*
-
 **Filtro Casado e Compressão de Pulso**: O sinal de retorno é processado por um Filtro Casado (h(t) = s*(-t)). A convolução entre o sinal de retorno e o filtro casado resulta na função de autocorrelação do Chirp, que possui um pico agudo e bem definido.
 y(t) = h(t) * s(t-T_d) ≈ T * sinc(W(t-T_d))
 
 A posição (t=T_d) deste pico revela o atraso do sinal e, consequentemente, a distância do alvo.
-
-![Saída do Filtro Casado](https://i.imgur.com/pZz8gAn.png)  
-*Figura 7 do artigo*
 
 ### 2. Estimativa de Velocidade
 
@@ -49,13 +43,7 @@ v = (f_d * c) / (2f_c)
 
 **Sinal Transmitido (Burst)**: Para medir a velocidade, o radar emite um trem de pulsos, conhecido como sinal em rajada (Burst).
 
-![Sinal em Rajada](https://i.imgur.com/W2d2Lza.png)  
-*Figura 15 do artigo*
-
 **Análise Espectral**: O movimento do alvo multiplica o sinal de retorno por uma exponencial complexa (e^(jω_dn)), o que causa um deslocamento de ω_d no espectro de frequência do sinal. Ao analisar o espectro do sinal recebido (via DTFT), podemos medir esse deslocamento e calcular a velocidade.
-
-![Deslocamento Doppler no Espectro](https://i.imgur.com/j1JtD2A.png)  
-*Figura 17 do artigo*
 
 ## 🛰️ Parâmetros da Simulação Final
 
@@ -91,9 +79,6 @@ Foram simulados 3 alvos com as seguintes características:
 ### Detecção e Precisão
 
 Após o processamento do sinal de retorno com ruído, os picos de energia revelaram a posição dos alvos, e a análise de fase pulso a pulso (DTFT) revelou suas velocidades.
-
-![Perfil de Distância](https://i.imgur.com/CGBiTzM.png)  
-*Figura 21 do artigo: Detecção dos 3 alvos no perfil de distância*
 
 Os resultados detectados foram extremamente próximos dos valores simulados, validando o sucesso da simulação.
 
